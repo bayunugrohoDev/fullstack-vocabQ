@@ -1,20 +1,18 @@
 {
     "compilerOptions": {
-      "module": "ESNext", // Use ESNext for ESM
-      "target": "ES2020", // Target modern ECMAScript versions
-      "moduleResolution": "node",
-      "esModuleInterop": true,
-      "allowSyntheticDefaultImports": true,
-      "outDir": "./dist", // Output directory for compiled files
-      "strict": true, // Enable strict type-checking options
-      "skipLibCheck": true, // Skip type checking of declaration files
-      "resolveJsonModule": true, // Include JSON imports
-      "forceConsistentCasingInFileNames": true,
-      "noEmit": false, // Allow emitting output
-      "isolatedModules": true, // Required for using ESM modules
-      "baseUrl": ".", // Allow absolute imports relative to project root
-      "paths": {
-        "*": ["node_modules/*"]
-      }
-    }
+      "target": "es2022",                       /* Atur target ECMAScript. es2022 cocok untuk Node.js modern */
+      "module": "commonjs",                     /* Atur sistem modul. commonjs untuk Node.js*/
+      "rootDir": "./src",                       /* Direktori root file sumber */
+      "outDir": "./dist",                       /* Direktori output untuk file kompilasi */
+      "esModuleInterop": true,                  /* Penting untuk import/export CommonJS dan ES Modules */
+      "forceConsistentCasingInFileNames": true, /* Pastikan konsistensi casing nama file */
+      "strict": true,                           /* Aktifkan semua opsi strict type-checking */
+      "skipLibCheck": true,                     /* Lewati pemeriksaan tipe untuk file .d.ts library (bisa membantu menghindari konflik, tapi idealnya false di produksi) */
+      "lib": ["es2022"],                        /* Library yang disertakan (misalnya, Promise, Array.prototype.map) */
+      "types": ["node", "express"],             /* Pastikan 'node' dan 'express' ada di sini */
+      "resolveJsonModule": true,                /* Izinkan import file JSON */
+      "moduleResolution": "node"                /* Strategi resolusi modul. 'node' untuk Node.js */
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts"], /* Sertakan semua file .ts dan .d.ts di src/ */
+    "exclude": ["node_modules", "dist"]         /* Kecualikan folder ini */
   }
