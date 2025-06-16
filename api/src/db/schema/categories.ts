@@ -12,7 +12,7 @@ export const categories = pgTable('categories', {
 });
 
 export const categoriesRelations = relations(categories, ({ one, many }) => ({
-  user: one(users, {
+  createdBy: one(users, {
     fields: [categories.userId],
     references: [users.id],
   }),

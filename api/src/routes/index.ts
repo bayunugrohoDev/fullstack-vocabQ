@@ -1,12 +1,12 @@
 // src/routes/index.ts
 import { Router } from 'express';
 import userRoutes from './users'; // User authentication routes
-import vocabEntriesRoutes from './vocabEntries'; // NEW: Vocab Entries routes
+import vocabEntriesRoutes from './vocabEntries'; // Vocab Entries routes
+import categoryRoutes from './categories'; // NEW: Categories routes
 
 // Import other route modules here if you have them:
 // import languageRoutes from './languages';
-// import categoryRoutes from './categories';
-// import userVocabProgressRoutes from './userVocabProgress'; // If you decide to add dedicated routes for this
+// import userVocabProgressRoutes from './userVocabProgress';
 
 const router = Router();
 
@@ -16,9 +16,11 @@ router.use('/auth', userRoutes); // All user/auth routes will be prefixed with /
 // Mount vocab entries routes under /vocab-entries
 router.use('/vocab-entries', vocabEntriesRoutes); // All vocab entries routes will be prefixed with /api/vocab-entries
 
+// Mount categories routes under /categories
+router.use('/categories', categoryRoutes); // All categories routes will be prefixed with /api/categories
+
 // Mount other route modules here:
 // router.use('/languages', languageRoutes);
-// router.use('/categories', categoryRoutes);
 // router.use('/user-vocab-progress', userVocabProgressRoutes);
 
 export default router;
